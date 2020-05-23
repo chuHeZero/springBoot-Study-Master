@@ -17,7 +17,7 @@ public class UserRestController {
 
 
     @GetMapping("/user")
-    public ResultBody findByUser(UserEntity user) {
+    public ResultBody findByUser() {
         ResultBody resultBody = new ResultBody();
         List<UserEntity> userList = new ArrayList<>();
         UserEntity user2 = new UserEntity();
