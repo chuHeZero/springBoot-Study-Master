@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Version:1.0.0
  *
  * @author chuhe
- * @date 2020年5月23日
  */
 @RestController
 public class HelloWorldController {

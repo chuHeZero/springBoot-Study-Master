@@ -1,13 +1,5 @@
 package com.chuhezero.entity;
 
-/**
- * Title: User
- * Description:用户pojo类
- * Version:1.0.0
- *
- * @author pancm
- * @date 2017年9月26日
- */
 public class UserEntity {
     /**
      * 编号
