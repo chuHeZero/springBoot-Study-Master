@@ -1,0 +1,10 @@
+# encode
+spring:
+  banner:
+    charset: UTF-8
+  messages:
+    encoding: UTF-8
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8848
