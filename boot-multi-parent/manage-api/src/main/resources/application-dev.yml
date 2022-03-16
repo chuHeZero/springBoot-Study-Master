@@ -2,6 +2,7 @@ server:
   port: 8888
 
 spring:
+
   #MySQL
   datasource:
     druid:
@@ -9,18 +10,21 @@ spring:
       username: root
       password: 123456
       driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+
+
   #Redis
   redis:
     host: 127.0.0.1
     port: 6379
-    password: root
-    jedis:
+    password: admin123
+    lettuce:
       pool:
-        max-active: 8      #è¿æ¥æ± æœ€å¤§è¿æ¥æ•°ï¼ˆä½¿ç”¨è´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰é™åˆ¶ï¼‰
-        max-wait: -1       #è¿æ¥æ± æœ€å¤§é˜»å¡ç­‰å¾…æ—¶é—´ï¼ˆä½¿ç”¨è´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰é™åˆ¶ï¼‰
-        max-idle: 8        #è¿æ¥æ± ä¸­çš„æœ€å¤§ç©ºé—²è¿æ¥
-        min-idle: 0        #è¿æ¥æ± ä¸­çš„æœ€å°ç©ºé—²è¿æ¥
-    connect-timeout: 30000 #è¿æ¥è¶…æ—¶æ—¶é—´ï¼ˆæ¯«ç§’ï¼‰
+        max-active: 50      #Á¬½Ó³Ø×î´óÁ¬½ÓÊı£¨Ê¹ÓÃ¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ£©
+        max-wait: 3000ms    #Á¬½Ó³Ø×î´ó×èÈûµÈ´ıÊ±¼ä£¨Ê¹ÓÃ¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ£©
+        max-idle: 50        #Á¬½Ó³ØÖĞµÄ×î´ó¿ÕÏĞÁ¬½Ó
+        min-idle: 3        #Á¬½Ó³ØÖĞµÄ×îĞ¡¿ÕÏĞÁ¬½Ó
+    connect-timeout: 30000 #Á¬½Ó³¬Ê±Ê±¼ä£¨ºÁÃë£©
+    database: 11
 
 
 # mybatis-plus
@@ -37,4 +41,8 @@ mybatis-plus:
   type-aliases-package: com.example.manage.entity
 
 
-
+#j2cache
+j2cache:
+  config-location: classpath:/j2cache-${spring.profiles.active}.properties
+  open-spring-cache: true
+  redis-client: lettuce
