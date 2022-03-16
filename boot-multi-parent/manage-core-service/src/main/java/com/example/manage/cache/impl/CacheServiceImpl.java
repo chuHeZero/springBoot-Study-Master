@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 /**
  * j2cache 缓存服务
- *
  */
 @Slf4j
 @RequiredArgsConstructor
@@ -18,15 +17,6 @@ public class CacheServiceImpl implements ICacheService {
 
     private final CacheChannel cacheChannel;
 
-    /**
-     * 缓存数据
-     *
-     * @param key   :
-     * @param value :
-     * @return
-     * @author abs
-     * @date 2020/10/28 16:09
-     */
     @Override
     public Boolean cacheValue(String key, String value) {
         try {
@@ -38,14 +28,6 @@ public class CacheServiceImpl implements ICacheService {
         return false;
     }
 
-    /**
-     * 获取缓存
-     *
-     * @param key :
-     * @return
-     * @author abs
-     * @date 2020/10/28 16:13
-     */
     @Override
     public String getValue(String key) {
         try {
@@ -57,14 +39,6 @@ public class CacheServiceImpl implements ICacheService {
         return null;
     }
 
-    /**
-     * 删除缓存
-     *
-     * @param key :
-     * @return
-     * @author abs
-     * @date 2020/10/28 16:09
-     */
     @Override
     public Boolean removeValue(String key) {
         try {
@@ -75,6 +49,5 @@ public class CacheServiceImpl implements ICacheService {
         }
         return false;
     }
-
 
 }

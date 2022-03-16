@@ -11,30 +11,29 @@ public interface ICacheService {
     String KEY_PREFIX_VALUE = "j2cache:manage:value";
 
     /**
-     * 缓存数据
-     * @param key:
-     * @param value:
-     * @return
-     * @author abs
-     * @date 2020/10/28 16:09
+     * @Description: 缓存数据
+     * @Param: [key, value]
+     * @Return: java.lang.Boolean
+     * @Author: XiaoHuoLong
+     * @Date: 2022/3/16 18:04
      */
     Boolean cacheValue(String key, String value);
 
     /**
-     * 获取缓存
-     * @param key:
-     * @return
-     * @author abs
-     * @date 2020/10/28 16:13
+     * @Description: 获取缓存
+     * @Param: [key]
+     * @Return: java.lang.String
+     * @Author: XiaoHuoLong
+     * @Date: 2022/3/16 18:04
      */
     String getValue(String key);
 
     /**
-     * 删除缓存
-     * @param key:
-     * @return
-     * @author abs
-     * @date 2020/10/28 16:09
+     * @Description: 删除缓存
+     * @Param: [key]
+     * @Return: java.lang.Boolean
+     * @Author: XiaoHuoLong
+     * @Date: 2022/3/16 18:04
      */
     Boolean removeValue(String key);
 }
