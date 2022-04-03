@@ -6,8 +6,9 @@ import org.springframework.context.ApplicationEvent;
 
 /**
  * 通知事件
- * @author abs
- * @date 2020/12/25 14:05
+ *
+ * @author zzm
+ * @date 2022/4/3 18:10
  */
 @Getter
 @Setter

@@ -15,6 +15,8 @@ public class MetaHandler implements MetaObjectHandler {
      * 新增数据执行
      *
      * @param metaObject
+     * @author zzm
+     * @date 2022/4/3 18:06
      */
     @Override
     public void insertFill(MetaObject metaObject) {
@@ -51,6 +53,8 @@ public class MetaHandler implements MetaObjectHandler {
      * 更新数据执行
      *
      * @param metaObject
+     * @author zzm
+     * @date 2022/4/3 18:06
      */
     @Override
     public void updateFill(MetaObject metaObject) {
@@ -80,6 +84,9 @@ public class MetaHandler implements MetaObjectHandler {
         }
     }
 
+    /**
+     * 用户id
+     */
     private Integer getUserId() {
         try {
             return SecurityUtils.getCurrentUserId();

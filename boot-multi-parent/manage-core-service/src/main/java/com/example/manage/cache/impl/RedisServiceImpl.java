@@ -464,7 +464,7 @@ public class RedisServiceImpl implements IRedisService {
      *
      * @param: key 键 time 时间(秒)
      * @return:
-     * @auther: abs
+     * @auther: zzm
      * @date: 2019/12/19 18:59
      */
     @Override
@@ -485,7 +485,7 @@ public class RedisServiceImpl implements IRedisService {
      *
      * @param: key 键 不能为null
      * @return: 时间(秒)
-     * @auther: abs
+     * @auther: zzm
      * @date: 2019/12/19 19:00
      */
     @Override

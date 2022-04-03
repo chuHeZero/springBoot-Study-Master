@@ -1,14 +1,14 @@
 server:
-  port: 8888
+  port: 8092
 
 spring:
 
   #MySQL
   datasource:
     druid:
-      url: jdbc:p6spy:mysql://localhost:3306/new_study?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      url: jdbc:p6spy:mysql://localhost:3306/study_new?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: 123456
+      password: zzm246810
       driver-class-name: com.p6spy.engine.spy.P6SpyDriver
 
 
@@ -19,12 +19,22 @@ spring:
     password: admin123
     lettuce:
       pool:
-        max-active: 50      #Á¬½Ó³Ø×î´óÁ¬½ÓÊı£¨Ê¹ÓÃ¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ£©
-        max-wait: 3000ms    #Á¬½Ó³Ø×î´ó×èÈûµÈ´ıÊ±¼ä£¨Ê¹ÓÃ¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ£©
-        max-idle: 50        #Á¬½Ó³ØÖĞµÄ×î´ó¿ÕÏĞÁ¬½Ó
-        min-idle: 3        #Á¬½Ó³ØÖĞµÄ×îĞ¡¿ÕÏĞÁ¬½Ó
-    connect-timeout: 30000 #Á¬½Ó³¬Ê±Ê±¼ä£¨ºÁÃë£©
+        max-active: 50
+        max-wait: 3000ms
+        max-idle: 50
+        min-idle: 3
+    connect-timeout: 30000
     database: 11
+
+
+  # æ¨¡æ¿å¼•æ“
+  thymeleaf:
+    # å¼€å‘æ—¶å…³é—­ç¼“å­˜ä¸ç„¶æ²¡æ³•çœ‹åˆ°å®æ—¶é¡µé¢
+    cache: false
+    # å¯ç”¨ä¸ä¸¥æ ¼æ£€æŸ¥
+    mode: LEGACYHTML5
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 
 
 # mybatis-plus
@@ -46,3 +56,9 @@ j2cache:
   config-location: classpath:/j2cache-${spring.profiles.active}.properties
   open-spring-cache: true
   redis-client: lettuce
+
+
+# Elasticsearché…ç½®
+elasticsearch:
+  hostname: 192.168.0.108
+  port: 9200

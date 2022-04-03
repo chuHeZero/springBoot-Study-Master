@@ -9,18 +9,17 @@ import java.lang.reflect.Field;
 
 /**
  * 公共controller
- * @author abs
- * @date 2020.06.19 13:54
+ * @author zzm
+ * @date 2022/4/3 17:48
  */
 public class BaseController {
 
     /**
      * JSR303 按字段顺序返回错误消息
-     *
-     * @param bindResult:
-     * @return
-     * @author abs
-     * @date 2020/1/7 12:12
+     * @author zzm
+     * @date 2022/4/3 17:47
+     * @param bindResult
+     * @return java.lang.String
      */
     protected String errorMessage(BindingResult bindResult) {
         Field[] fields = bindResult.getTarget().getClass().getDeclaredFields();

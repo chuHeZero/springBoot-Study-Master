@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * common
  *
- * @author abs
+ * @author zzm
  * @date 2020.01.09 11:09
  */
 @Component
@@ -86,4 +86,6 @@ public class CommonConstant {
      */
     @Deprecated
     public static final String MARKET_SENSITIVE_AUTH_PARAM = "placeProvince,placeCity,placeRegion,currentTimeId,currentTimeId,number";
+
+    public static final String INDEX = "book";
 }

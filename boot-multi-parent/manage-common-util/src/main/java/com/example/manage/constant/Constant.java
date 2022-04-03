@@ -2,9 +2,8 @@ package com.example.manage.constant;
 
 /**
  * 公共常量
- *
- * @author abs
- * @date 2020.07.15 16:30
+ * @author zzm
+ * @date 2022/4/3 18:11
  */
 public class Constant {
 

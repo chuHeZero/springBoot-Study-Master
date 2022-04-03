@@ -9,11 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @Description:
- * @Author: xiaoHuoLong
- * @Date: 2022/2/28 11:19
- */
 @Api(value = "账单查询", tags = "账单查询")
 @RestController
 @RequestMapping("/billOrder")

@@ -8,7 +8,8 @@ import java.io.Serializable;
 /**
  * Entity基类
  *
- * @author abs
+ * @author zzm
+ * @date 2022/4/3 18:15
  */
 @Data
 public class BaseEntity extends Model implements Serializable {

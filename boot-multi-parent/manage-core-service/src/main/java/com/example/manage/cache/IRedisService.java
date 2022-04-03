@@ -8,6 +8,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * redis缓存service
+ *
+ * @author zzm
+ * @date 2022/4/3 18:14
  */
 public interface IRedisService {
 
@@ -215,13 +218,13 @@ public interface IRedisService {
 
     /**
      * 前缀移除缓存
+     *
      * @param prefix
      * @return
      */
     boolean removeByPrefix(String prefix);
 
     /**
-     *
      * 功能描述: 递增
      *
      * @param:
@@ -232,7 +235,6 @@ public interface IRedisService {
     long incr(String key, long delta);
 
     /**
-     *
      * 功能描述: 递减
      *
      * @param:
@@ -243,7 +245,6 @@ public interface IRedisService {
     long decr(String key, long delta);
 
     /**
-     *
      * 功能描述: 设置过期时间
      *
      * @param:
@@ -254,7 +255,6 @@ public interface IRedisService {
     boolean expire(String key, long time);
 
     /**
-     *
      * 功能描述: 查看过期时间
      *
      * @param:
@@ -269,7 +269,7 @@ public interface IRedisService {
      *
      * @param pattern:
      * @return
-     * @author abs
+     * @author zzm
      * @date 2020/8/10 11:22
      */
     List<String> scan(String pattern);

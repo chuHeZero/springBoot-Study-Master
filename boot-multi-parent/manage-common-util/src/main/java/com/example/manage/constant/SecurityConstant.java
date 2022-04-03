@@ -1,11 +1,5 @@
 package com.example.manage.constant;
 
-/**
- * TODO
- *
- * @author abs
- * @date 2020.08.10 11:03
- */
 public class SecurityConstant {
 
     /**

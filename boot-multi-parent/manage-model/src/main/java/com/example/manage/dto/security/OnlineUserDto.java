@@ -9,7 +9,8 @@ import java.util.Date;
 
 /**
  * 在线用户
- * @author abs
+ *
+ * @author zzm
  */
 @Data
 @AllArgsConstructor

@@ -3,7 +3,6 @@ package com.example.manage.common;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.example.manage.constant.CommonConstant;
 import com.example.manage.constant.SecurityConstant;
 import com.example.manage.dto.security.JwtUserDto;
 import com.example.manage.enums.common.AuthErrorCodeEnum;
@@ -11,26 +10,25 @@ import com.example.manage.exception.BizException;
 import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * 权限工具
  *
- * @author abs
- * @date 2020.08.10 11:00
+ * @author zzm
+ * @date 2022/4/3 18:10
  */
 public class SecurityUtils {
 
     /**
      * 获取当前登录用户
      *
-     * @return
+     * @return org.springframework.security.core.userdetails.UserDetails
+     * @author zzm
+     * @date 2022/4/3 18:10
      */
     public static UserDetails getUserDetails() {
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -48,7 +46,9 @@ public class SecurityUtils {
     /**
      * 获取系统用户名称
      *
-     * @return 系统用户名称
+     * @return java.lang.String
+     * @author zzm
+     * @date 2022/4/3 18:10
      */
     public static String getCurrentUsername() {
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -65,7 +65,9 @@ public class SecurityUtils {
     /**
      * 获取系统用户名称
      *
-     * @return 系统用户名称
+     * @return java.lang.String
+     * @author zzm
+     * @date 2022/4/3 18:10
      */
     public static String getCurrentUserNickName() {
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -82,7 +84,9 @@ public class SecurityUtils {
     /**
      * 获取系统用户ID
      *
-     * @return 系统用户ID
+     * @return java.lang.Integer
+     * @author zzm
+     * @date 2022/4/3 18:11
      */
     public static Integer getCurrentUserId() {
         JwtUserDto userDetails = (JwtUserDto) getUserDetails();
@@ -91,6 +95,11 @@ public class SecurityUtils {
 
     /**
      * 根据ip获取详细地址
+     *
+     * @param ip
+     * @return java.lang.String
+     * @author zzm
+     * @date 2022/4/3 18:11
      */
     public static String getCityInfo(String ip) {
         try {
@@ -103,32 +112,17 @@ public class SecurityUtils {
     }
 
     /**
-     * 是否是超级管理员
-     */
-    public static boolean isSuperAdmin() {
-        List<String> permissions = SecurityUtils.getUserDetails().getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
-        return permissions.contains(CommonConstant.ADMIN_AUTH);
-    }
-
-    /**
-     * 是否脱敏
-     */
-    public static boolean hideSensitive() {
-        List<String> permissions = SecurityUtils.getUserDetails().getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
-        return !permissions.contains(CommonConstant.SENSITIVE_AUTH);
-    }
-
-    /**
      * 获取浏览器
      *
      * @param request
-     * @return
+     * @return java.lang.String
+     * @author zzm
+     * @date 2022/4/3 18:11
      */
     public static String getBrowser(HttpServletRequest request) {
         UserAgent userAgent = UserAgent.parseUserAgentString(request.getHeader("User-Agent"));
         Browser browser = userAgent.getBrowser();
         return browser.getName();
     }
-
 
 }

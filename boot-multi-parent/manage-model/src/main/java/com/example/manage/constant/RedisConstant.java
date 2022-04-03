@@ -2,7 +2,8 @@ package com.example.manage.constant;
 
 /**
  * redis配置
- * @author abs
+ *
+ * @author zzm
  * @date 2020/6/19 14:03
  */
 public class RedisConstant {
@@ -10,17 +11,17 @@ public class RedisConstant {
     /**
      * value前缀
      */
-    public static final String KEY_PREFIX_VALUE = "ibeidiao:manage:value:";
+    public static final String KEY_PREFIX_VALUE = "manage:value:";
 
     /**
      * set前缀
      */
-    public static final String KEY_PREFIX_SET = "ibeidiao:manage:set:";
+    public static final String KEY_PREFIX_SET = "manage:set:";
 
     /**
      * list前缀
      */
-    public static final String KEY_PREFIX_LIST = "ibeidiao:manage:list:";
+    public static final String KEY_PREFIX_LIST = "manage:list:";
 
     /**
      * 配置key

@@ -11,13 +11,13 @@ public enum AuthErrorCodeEnum implements IResultCode {
     /**
      * 当前登录状态过期
      */
-    AUTH_STATUS_ERROR("50001", "当前登录状态过期"),
+    AUTH_STATUS_ERROR("20001", "当前登录状态过期"),
 
 
     /**
      * 找不到当前登录的信息
      */
-    AUTH_NO_ERROR("50002", "找不到当前登录的信息"),
+    AUTH_NO_ERROR("20002", "找不到当前登录的信息"),
 
     ;
 
