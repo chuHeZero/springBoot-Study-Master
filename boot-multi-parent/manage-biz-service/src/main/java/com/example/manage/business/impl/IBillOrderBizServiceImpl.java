@@ -23,9 +23,9 @@ public class IBillOrderBizServiceImpl implements IBillOrderBizService {
     private final IRedisService redisService;
 
     @Override
-    public BillOrderVO getBillOrderByID(Integer billId) {
+    public BillOrderVO getBillOrderById(Integer billId) {
         redisService.cacheValue("a","dddddddddddddddddddddddddd");
         System.out.println(redisService.getValue("a"));
-        return billOrderService.getBillOrderByID(billId);
+        return billOrderService.getBillOrderById(billId);
     }
 }

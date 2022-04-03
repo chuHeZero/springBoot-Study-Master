@@ -1,10 +1,12 @@
-package com.example.manage.api.controller.business;
+package com.example.manage.api.controller.admin.business;
 
 import com.example.manage.api.controller.common.BaseController;
 import com.example.manage.business.IBillOrderBizService;
 import com.example.manage.vo.business.BillOrderVO;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,14 +19,16 @@ public class BillOrderController extends BaseController {
 
     private final IBillOrderBizService billOrderBizService;
 
-    @RequestMapping("/test")
+    @ApiOperation(value = "测试接口")
+    @PostMapping("/test")
     public String test() {
         return "hello World!!!";
     }
 
-    @RequestMapping("/test2")
+    @ApiOperation(value = "新增标签test2")
+    @PostMapping("/getBillOrderById")
     @ResponseBody
-    public BillOrderVO test2() {
-        return billOrderBizService.getBillOrderByID(2);
+    public BillOrderVO getBillOrderById() {
+        return billOrderBizService.getBillOrderById(2);
     }
 }

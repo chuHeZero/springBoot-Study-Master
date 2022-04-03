@@ -21,7 +21,7 @@
         id, person_name, id_number, pay_amt, create_by, create_time, update_by, update_time, status, deleted
     </sql>
 
-    <select id="getBillOrderByID" parameterType="java.lang.Integer" resultType="com.example.manage.vo.business.BillOrderVO">
+    <select id="getBillOrderById" parameterType="java.lang.Integer" resultType="com.example.manage.vo.business.BillOrderVO">
         SELECT
             <include refid="Base_Column_List"/>
         FROM

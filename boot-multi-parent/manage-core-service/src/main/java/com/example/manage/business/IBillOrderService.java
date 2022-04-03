@@ -21,5 +21,5 @@ public interface IBillOrderService extends IService<BillOrder> {
      * @Author: XiaoHuoLong
      * @Date: 2022/2/28 16:37
      */
-    BillOrderVO getBillOrderByID(Integer billId);
+    BillOrderVO getBillOrderById(Integer billId);
 }

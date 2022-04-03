@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
 public class BillOrderServiceImpl extends ServiceImpl<BillOrderMapper, BillOrder> implements IBillOrderService {
 
     @Override
-    public BillOrderVO getBillOrderByID(Integer billId) {
-        return baseMapper.getBillOrderByID(billId);
+    public BillOrderVO getBillOrderById(Integer billId) {
+        return baseMapper.getBillOrderById(billId);
     }
 }

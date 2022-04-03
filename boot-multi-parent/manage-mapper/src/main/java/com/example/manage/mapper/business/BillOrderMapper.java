@@ -22,5 +22,5 @@ public interface BillOrderMapper extends BaseMapper<BillOrder> {
      * @Author: XiaoHuoLong
      * @Date: 2022/2/28 16:37
      */
-    BillOrderVO getBillOrderByID(@Param("billId") Integer billId);
+    BillOrderVO getBillOrderById(@Param("billId") Integer billId);
 }

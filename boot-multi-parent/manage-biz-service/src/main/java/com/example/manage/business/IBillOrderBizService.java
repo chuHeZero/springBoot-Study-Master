@@ -16,5 +16,5 @@ public interface IBillOrderBizService {
      * @Author: XiaoHuoLong
      * @Date: 2022/2/28 16:37
      */
-    BillOrderVO getBillOrderByID(Integer billId);
+    BillOrderVO getBillOrderById(Integer billId);
 }

@@ -31,6 +31,7 @@
         <commons.io.version>2.5</commons.io.version>
         <velocity.version>2.2</velocity.version>
         <elasticsearch.version>7.6.0</elasticsearch.version>
+        <swagger.version>3.0.0</swagger.version>
     </properties>
 
     <parent>
@@ -154,14 +155,14 @@
             <version>3.1.10.RELEASE</version>
         </dependency>
 
-        <!-- Java Low Level REST Client -->
+        <!-- es低版本客户端 Java Low Level REST Client -->
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>elasticsearch-rest-client</artifactId>
             <version>${elasticsearch.version}</version>
         </dependency>
 
-        <!-- Java High Level REST Client -->
+        <!-- es高版本客户端 Java High Level REST Client -->
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>elasticsearch-rest-high-level-client</artifactId>
@@ -194,11 +195,32 @@
             <optional>true</optional>
         </dependency>
 
-        <!--swagger-->
+        <!--knife4j（swagger增强版） -->
         <dependency>
-            <groupId>com.github.xiaoymin</groupId>
+            <groupId>com.github.shijingsh</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>2.0.5</version>
+            <version>3.0.5</version>
+        </dependency>
+
+        <!-- swagger2  restful api 文档  start -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <!-- swagger2  restful api 文档  end -->
+
+
+        <!-- 避免版本冲突 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.1-jre</version>
         </dependency>
 
         <!--mapStruct依赖-->

@@ -35,6 +35,9 @@ spring:
     mode: LEGACYHTML5
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 
 # mybatis-plus
@@ -50,7 +53,6 @@ mybatis-plus:
       logic-not-delete-value: 0
   type-aliases-package: com.example.manage.entity
 
-
 #j2cache
 j2cache:
   config-location: classpath:/j2cache-${spring.profiles.active}.properties
@@ -62,3 +64,13 @@ j2cache:
 elasticsearch:
   hostname: 192.168.0.108
   port: 9200
+
+
+#配置swagger配置
+knife4j:
+  basic:
+    username: admin
+    password: 123
+    enable: true #开启认证
+  production: false #默认是false ,屏蔽所有Swagger的相关资源
+  enable: true #是否开启swagger
