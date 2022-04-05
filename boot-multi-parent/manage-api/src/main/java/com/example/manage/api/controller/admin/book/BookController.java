@@ -1,6 +1,6 @@
 package com.example.manage.api.controller.admin.book;
 
-import com.example.manage.api.controller.common.BaseController;
+import com.example.manage.api.controller.admin.common.BaseController;
 import com.example.manage.book.IBookBizService;
 import com.example.manage.common.ICommonBizService;
 import com.example.manage.domain.ResultData;

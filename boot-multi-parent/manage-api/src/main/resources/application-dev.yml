@@ -35,6 +35,9 @@ spring:
     mode: LEGACYHTML5
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+
+
+  # 指定路径匹配规则
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -71,6 +74,14 @@ knife4j:
   basic:
     username: admin
     password: 123
-    enable: true #开启认证
+    enable: false #开启认证
   production: false #默认是false ,屏蔽所有Swagger的相关资源
   enable: true #是否开启swagger
+
+
+# 自定义jwt的header
+zzm:
+  jwt:
+    header: Authorization
+    expire: 604800 # 7天，s为单位
+    secret: abcdefghabcdefghabcdefghabcdefgh

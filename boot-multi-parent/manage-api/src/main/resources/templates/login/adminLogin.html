@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>用户登录界面</title>
+    <link th:href="@{/login/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/login/css/signin.css}" rel="stylesheet">
+</head>
+<body class="text-center">
+<form class="form-signin" th:method="post" th:action="@{/adminLogin}">
+    <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+    <input type="text" class="form-control" placeholder="用户名" required="" autofocus="" name="username">
+    <input type="password" style="margin-top: 10px; margin-bottom: 10px;" class="form-control" placeholder="密码"
+           required="" name="password">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    <p class="mt-5 mb-3 text-muted">Copyright© 2022-2077</p>
+</form>
+</body>
+</html>

@@ -33,5 +33,33 @@ public class ResultData<T> implements Serializable {
         this.success = success;
     }
 
+    public static ResultData success(Object data) {
+        return success("200", "操作成功", data);
+    }
+
+    public static ResultData success(String code, String msg, Object data) {
+        ResultData result = new ResultData();
+        result.setCode(code);
+        result.setMessage(msg);
+        result.setData(data);
+        return result;
+    }
+
+    public static ResultData fail(String msg) {
+        return fail("400", msg, null);
+    }
+
+    public static ResultData fail(String code, String msg) {
+        return fail(code, msg, null);
+    }
+
+    public static ResultData fail(String code, String msg, Object data) {
+        ResultData result = new ResultData();
+        result.setCode(code);
+        result.setMessage(msg);
+        result.setData(data);
+        return result;
+    }
+
 
 }

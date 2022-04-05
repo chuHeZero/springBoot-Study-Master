@@ -57,7 +57,7 @@ public class SecurityUtils {
         }
         if (authentication.getPrincipal() instanceof UserDetails) {
             JwtUserDto userDetails = (JwtUserDto) authentication.getPrincipal();
-            return userDetails.getUser().getUsername();
+            return userDetails.getUsername();
         }
         throw new BizException(AuthErrorCodeEnum.AUTH_NO_ERROR);
     }
@@ -76,7 +76,8 @@ public class SecurityUtils {
         }
         if (authentication.getPrincipal() instanceof UserDetails) {
             JwtUserDto userDetails = (JwtUserDto) authentication.getPrincipal();
-            return userDetails.getUser().getNickName();
+//            return userDetails.getNickName();
+            return "系统";
         }
         throw new BizException(AuthErrorCodeEnum.AUTH_NO_ERROR);
     }
@@ -90,7 +91,8 @@ public class SecurityUtils {
      */
     public static Integer getCurrentUserId() {
         JwtUserDto userDetails = (JwtUserDto) getUserDetails();
-        return userDetails.getUser().getId();
+//        return userDetails.getUserId();
+        return 1;
     }
 
     /**

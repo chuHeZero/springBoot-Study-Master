@@ -1,4 +1,4 @@
-package com.example.manage.api.controller.common;
+package com.example.manage.api.controller.admin.common;
 
 import com.example.manage.domain.ResultData;
 import com.example.manage.enums.common.ResultCode;

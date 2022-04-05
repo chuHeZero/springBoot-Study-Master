@@ -1,6 +1,6 @@
 package com.example.manage.api.controller.admin.business;
 
-import com.example.manage.api.controller.common.BaseController;
+import com.example.manage.api.controller.admin.common.BaseController;
 import com.example.manage.business.IBillOrderBizService;
 import com.example.manage.vo.business.BillOrderVO;
 import io.swagger.annotations.Api;
@@ -29,6 +29,6 @@ public class BillOrderController extends BaseController {
     @PostMapping("/getBillOrderById")
     @ResponseBody
     public BillOrderVO getBillOrderById() {
-        return billOrderBizService.getBillOrderById(2);
+        return billOrderBizService.getBillOrderById(1);
     }
 }

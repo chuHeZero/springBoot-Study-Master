@@ -1,11 +1,13 @@
 package com.example.manage.dto.security;
 
+import cn.hutool.core.lang.Assert;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -13,55 +15,78 @@ import java.util.stream.Collectors;
 /**
  * @author zzm
  */
-@Getter
-@AllArgsConstructor
 public class JwtUserDto implements UserDetails {
 
-    private final UserDto user;
+    private static final long serialVersionUID = 540L;
+    private Integer userId;
+    private final String username;
+    private String password;
+    //    private String nickName;
+    private final Collection<? extends GrantedAuthority> authorities;
+    private final boolean accountNonExpired;
+    private final boolean accountNonLocked;
+    private final boolean credentialsNonExpired;
+    private final boolean enabled;
 
-    private final List<Integer> roles;
 
-    // 权限
-    @JsonIgnore
-    private final List<GrantedAuthority> authorities;
+    public JwtUserDto(Integer userId, String username, String password, Collection<? extends GrantedAuthority> authorities) {
+        this(userId, username, password, true, true, true, true, authorities);
+    }
 
-    public Set<String> getRoles() {
-        return authorities.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
+    public JwtUserDto(Integer userId, String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities) {
+        Assert.isTrue(username != null && !"".equals(username) && password != null, "Cannot pass null or empty values to constructor");
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
+        this.accountNonExpired = accountNonExpired;
+        this.credentialsNonExpired = credentialsNonExpired;
+        this.accountNonLocked = accountNonLocked;
+        this.authorities = authorities;
     }
 
     @Override
-    @JsonIgnore
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.authorities;
+    }
+
+    @Override
     public String getPassword() {
-        return user.getPassword();
+        return this.password;
     }
+
+    /*@Override
+    public Integer getUserId() {
+        return this.userId;
+    }*/
 
     @Override
-    @JsonIgnore
     public String getUsername() {
-        return user.getUsername();
+        return this.username;
     }
 
-    @JsonIgnore
+    /*@Override
+    public String getNickName() {
+        return this.nickName;
+    }*/
+
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return this.accountNonExpired;
     }
 
-    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return this.accountNonLocked;
     }
 
-    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return this.credentialsNonExpired;
     }
 
     @Override
-    @JsonIgnore
     public boolean isEnabled() {
-        return user.getEnabled();
+        return this.enabled;
     }
 }

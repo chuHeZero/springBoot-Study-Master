@@ -11,4 +11,5 @@ public class Constant {
     public static final String TIME_FORMAT2 = "YYYYMMDD";
     public static final String TIME_FORMAT3 = "YYYY-MM-DD";
 
+    public static final String CAPTCHA_KEY = "captcha";
 }
